@@ -18,8 +18,12 @@ MainWindow::MainWindow(QWidget *parent)
     {
         query = new QSqlQuery(db);
         patimodel->setTable("patient");
+        devimodel->setTable("facility");
     }
     ui->patientTable->setModel(patimodel);
+    ui->patiBindTable->setModel(patimodel);
+    ui->deviceBindTable->setModel(devimodel);
+    ui->patideviBindTable->setModel(patidevimodel);
     ui->stackedWidget->setCurrentIndex(0);
 }
 
@@ -63,6 +67,9 @@ void MainWindow::on_pushButton_clicked()
     {
         haveLogged = true;
         ui->statusLabel->setText("状态：已登录");
+        patimodel->select();
+        devimodel->select();
+        patidevimodel->setQuery(bindInfoSQL);
     }
     else
     {
@@ -143,4 +150,32 @@ void MainWindow::on_deleteBtn_clicked()
         patimodel->submitAll();
         patimodel->select();
     }
+}
+
+void MainWindow::on_bindBtn_clicked()
+{
+    auto patiindex = patimodel->index(ui->patiBindTable->currentIndex().row(), 0).data().toString();
+    auto deviindex = devimodel->index(ui->deviceBindTable->currentIndex().row(), 0).data().toString();
+    if(!query->exec(QString("insert into facipati(facilityid, patientid) values(%1, %2)").arg(deviindex).arg(patiindex)))
+        QMessageBox::critical(this, "失败", query->lastError().text());
+}
+
+void MainWindow::on_unBindBtn_clicked()
+{
+    auto id = patidevimodel->index(ui->patideviBindTable->currentIndex().row(), 0).data().toString();
+    if(!query->exec(QString("delete from facipati where id=%1").arg(id)))
+        QMessageBox::critical(this, "失败", query->lastError().text());
+}
+
+void MainWindow::on_updateBindBtn_clicked()
+{
+    if(haveLogged)
+    {
+        patimodel->select();
+
+        patidevimodel->setQuery(bindInfoSQL);
+        devimodel->select();
+    }
+    else
+        QMessageBox::information(this, "尚未登录", "请先登录！");
 }

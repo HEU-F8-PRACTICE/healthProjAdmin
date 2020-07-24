@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QtSql/QSqlDatabase>
 #include <QSqlTableModel>
+#include <QSqlQueryModel>
 #include <QDebug>
 #include <QtSql/QSqlQuery>
 #include <QMessageBox>
@@ -24,6 +25,11 @@ public:
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     QSqlQuery *query;
     QSqlTableModel *patimodel = new QSqlTableModel;
+    QSqlTableModel *devimodel = new QSqlTableModel;
+    QSqlQueryModel *patidevimodel = new QSqlQueryModel;
+    QString bindInfoSQL = "select id, facility.facilityid,patient.patientid,serialflag,intnetflag,idcardNum,name,age,sex"
+                          " from facipati, facility, patient"
+                          " where facility.facilityid=facipati.facilityid and patient.patientid=facipati.patientid;";
     bool haveLogged = false;
 
 private slots:
@@ -48,6 +54,12 @@ private slots:
     void on_patientTable_doubleClicked(const QModelIndex &index);
 
     void on_deleteBtn_clicked();
+
+    void on_bindBtn_clicked();
+
+    void on_unBindBtn_clicked();
+
+    void on_updateBindBtn_clicked();
 
 private:
     Ui::MainWindow *ui;

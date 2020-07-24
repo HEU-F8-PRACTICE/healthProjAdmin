@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1065</width>
     <height>600</height>
    </rect>
   </property>
@@ -409,6 +409,13 @@ background-color: rgb(255, 58, 110);</string>
           </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_13">
+            <item>
+             <widget class="QPushButton" name="updateBindBtn">
+              <property name="text">
+               <string>更新数据</string>
+              </property>
+             </widget>
+            </item>
             <item>
              <widget class="QPushButton" name="bindBtn">
               <property name="text">
