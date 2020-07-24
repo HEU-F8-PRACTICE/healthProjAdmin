@@ -10,6 +10,7 @@
 #include <QMessageBox>
 #include <QInputDialog>
 #include <QtSql/QSqlError>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,15 +23,30 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     QSqlQuery *query;
     QSqlTableModel *patimodel = new QSqlTableModel;
     QSqlTableModel *devimodel = new QSqlTableModel;
     QSqlQueryModel *patidevimodel = new QSqlQueryModel;
+    QSqlTableModel *model1 = new QSqlTableModel;
+    QSqlTableModel *model2 = new QSqlTableModel;
+    QSqlTableModel *model3 = new QSqlTableModel;
+    QSqlTableModel *model4 = new QSqlTableModel;
+    QSqlTableModel *model5 = new QSqlTableModel;
+    QSqlTableModel *model6 = new QSqlTableModel;
+    QSqlTableModel *model7 = new QSqlTableModel;
     QString bindInfoSQL = "select id, facility.facilityid,patient.patientid,serialflag,intnetflag,idcardNum,name,age,sex"
                           " from facipati, facility, patient"
                           " where facility.facilityid=facipati.facilityid and patient.patientid=facipati.patientid;";
+    QList<int> ecgData;
+    QList<int> spo2Data;
+    QList<int> bpData;
+    QTimer updatetimer;
     bool haveLogged = false;
+
+public slots:
+    void updateCharts();
 
 private slots:
     void on_loginPageBtn_clicked();
@@ -60,6 +76,14 @@ private slots:
     void on_unBindBtn_clicked();
 
     void on_updateBindBtn_clicked();
+
+    void on_updateWaveBtn_clicked();
+
+    void on_history_clicked(bool checked);
+
+    void on_otherUpdateBtn_clicked();
+
+    void on_connectBtn_clicked();
 
 private:
     Ui::MainWindow *ui;

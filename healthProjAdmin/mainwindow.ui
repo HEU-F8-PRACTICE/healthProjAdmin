@@ -84,7 +84,7 @@ border-width: 0px;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(255, 58, 110);
+background-color: rgb(67, 67, 67);
 border-width: 0px;</string>
         </property>
         <property name="text">
@@ -102,7 +102,7 @@ border-width: 0px;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(255, 58, 110);
+background-color: rgb(255, 182, 92);
 border-width: 0px;</string>
         </property>
         <property name="text">
@@ -119,36 +119,120 @@ border-width: 0px;</string>
 background-color: rgb(255, 58, 110);</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="loginPage">
-       <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <layout class="QHBoxLayout" name="horizontalLayout_25">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
+         <layout class="QHBoxLayout" name="horizontalLayout_24">
           <item>
-           <spacer name="verticalSpacer">
+           <spacer name="horizontalSpacer">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>20</width>
-              <height>40</height>
+              <width>40</width>
+              <height>20</height>
              </size>
             </property>
            </spacer>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <layout class="QVBoxLayout" name="verticalLayout_13">
             <item>
-             <spacer name="horizontalSpacer">
+             <spacer name="verticalSpacer_4">
               <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+               <enum>Qt::Vertical</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>40</width>
-                <height>20</height>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <item>
+                 <widget class="QLabel" name="label_16">
+                  <property name="text">
+                   <string>数据库地址</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="dbIPEdit"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <item>
+                 <widget class="QLabel" name="label_17">
+                  <property name="text">
+                   <string>数据库名称</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="dbnameEdit"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_22">
+                <item>
+                 <widget class="QLabel" name="label_18">
+                  <property name="text">
+                   <string>数据库账号</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="dbaccountEdit"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_23">
+                <item>
+                 <widget class="QLabel" name="label_19">
+                  <property name="text">
+                   <string>数据库密码</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="dbPasswordEdit">
+                  <property name="echoMode">
+                   <enum>QLineEdit::Password</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QPushButton" name="connectBtn">
+                <property name="text">
+                 <string>连接</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
                </size>
               </property>
              </spacer>
@@ -189,6 +273,9 @@ background-color: rgb(255, 58, 110);</string>
               </item>
               <item>
                <widget class="QPushButton" name="pushButton">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
                 <property name="text">
                  <string>登录</string>
                 </property>
@@ -204,14 +291,14 @@ background-color: rgb(255, 58, 110);</string>
              </layout>
             </item>
             <item>
-             <spacer name="horizontalSpacer_2">
+             <spacer name="verticalSpacer_2">
               <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+               <enum>Qt::Vertical</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>40</width>
-                <height>20</height>
+                <width>20</width>
+                <height>40</height>
                </size>
               </property>
              </spacer>
@@ -219,14 +306,14 @@ background-color: rgb(255, 58, 110);</string>
            </layout>
           </item>
           <item>
-           <spacer name="verticalSpacer_2">
+           <spacer name="horizontalSpacer_2">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>20</width>
-              <height>40</height>
+              <width>40</width>
+              <height>20</height>
              </size>
             </property>
            </spacer>
@@ -454,51 +541,93 @@ background-color: rgb(255, 58, 110);</string>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(67, 67, 67);</string>
        </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_17">
+       <layout class="QHBoxLayout" name="horizontalLayout_20">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_11" stretch="0,1,1,1">
+         <layout class="QHBoxLayout" name="horizontalLayout_17" stretch="0,3">
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_16" stretch="1,1,0,0,0">
+           <widget class="QTableView" name="waveDeviTable"/>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_11" stretch="0,1,1,1">
             <item>
-             <widget class="QDateTimeEdit" name="dateTimeEdit"/>
+             <layout class="QHBoxLayout" name="horizontalLayout_16" stretch="1,0,0,0,0,0,0">
+              <item>
+               <widget class="QDateTimeEdit" name="beginTime">
+                <property name="dateTime">
+                 <datetime>
+                  <hour>0</hour>
+                  <minute>0</minute>
+                  <second>0</second>
+                  <year>2020</year>
+                  <month>7</month>
+                  <day>24</day>
+                 </datetime>
+                </property>
+                <property name="displayFormat">
+                 <string>yyyy-MM-dd HH:mm:ss</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_12">
+                <property name="text">
+                 <string>每</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="spinBox">
+                <property name="minimum">
+                 <number>2</number>
+                </property>
+                <property name="value">
+                 <number>2</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_13">
+                <property name="text">
+                 <string>秒更新1次</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="history">
+                <property name="text">
+                 <string>历史</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="realtime">
+                <property name="text">
+                 <string>实时</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="updateWaveBtn">
+                <property name="text">
+                 <string>更新</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </item>
             <item>
-             <widget class="QDateTimeEdit" name="dateTimeEdit_2"/>
+             <widget class="PlotWidget" name="ecgWaveDisplay" native="true"/>
             </item>
             <item>
-             <widget class="QRadioButton" name="radioButton">
-              <property name="text">
-               <string>历史</string>
-              </property>
-             </widget>
+             <widget class="PlotWidget" name="spo2WaveDisplay" native="true"/>
             </item>
             <item>
-             <widget class="QRadioButton" name="radioButton_2">
-              <property name="text">
-               <string>实时</string>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_8">
-              <property name="text">
-               <string>更新</string>
-              </property>
-             </widget>
+             <widget class="PlotWidget" name="bpWaveDisplay" native="true"/>
             </item>
            </layout>
-          </item>
-          <item>
-           <widget class="QWidget" name="widget" native="true"/>
-          </item>
-          <item>
-           <widget class="QWidget" name="widget_2" native="true"/>
-          </item>
-          <item>
-           <widget class="QWidget" name="widget_3" native="true"/>
           </item>
          </layout>
         </item>
@@ -508,64 +637,132 @@ background-color: rgb(255, 58, 110);</string>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 182, 92);</string>
        </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_19">
+       <layout class="QHBoxLayout" name="horizontalLayout_21">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_12">
+         <layout class="QHBoxLayout" name="horizontalLayout_19">
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_18">
-            <item>
-             <widget class="QRadioButton" name="radioButton_3">
-              <property name="text">
-               <string>HR</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="radioButton_4">
-              <property name="text">
-               <string>ST</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="radioButton_5">
-              <property name="text">
-               <string>NIBP</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="radioButton_6">
-              <property name="text">
-               <string>SPO2</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="radioButton_7">
-              <property name="text">
-               <string>TEMP</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="radioButton_8">
-              <property name="text">
-               <string>RESP</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="radioButton_9">
-              <property name="text">
-               <string>CO2</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
+           <widget class="QTableView" name="otherDeviTable"/>
           </item>
           <item>
-           <widget class="QListView" name="listView"/>
+           <layout class="QVBoxLayout" name="verticalLayout_12">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_18">
+              <item>
+               <widget class="QLabel" name="label_14">
+                <property name="text">
+                 <string>从</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDateTimeEdit" name="dateTimeEdit">
+                <property name="dateTime">
+                 <datetime>
+                  <hour>0</hour>
+                  <minute>0</minute>
+                  <second>0</second>
+                  <year>2020</year>
+                  <month>7</month>
+                  <day>22</day>
+                 </datetime>
+                </property>
+                <property name="displayFormat">
+                 <string>yyyy-MM-dd HH:mm:ss</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_15">
+                <property name="text">
+                 <string>到</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDateTimeEdit" name="dateTimeEdit_2">
+                <property name="dateTime">
+                 <datetime>
+                  <hour>0</hour>
+                  <minute>0</minute>
+                  <second>0</second>
+                  <year>2020</year>
+                  <month>7</month>
+                  <day>24</day>
+                 </datetime>
+                </property>
+                <property name="displayFormat">
+                 <string>yyyy-MM-dd HH:mm:ss</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="hrRadio">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="text">
+                 <string>HR</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="stRadio">
+                <property name="text">
+                 <string>ST</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="nibpRadio">
+                <property name="text">
+                 <string>NIBP</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="spo2Radio">
+                <property name="text">
+                 <string>SPO2</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="tempRadio">
+                <property name="text">
+                 <string>TEMP</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="respRadio">
+                <property name="text">
+                 <string>RESP</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="co2Radio">
+                <property name="text">
+                 <string>CO2</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="otherUpdateBtn">
+                <property name="text">
+                 <string>更新</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QTableView" name="tableView"/>
+            </item>
+           </layout>
           </item>
          </layout>
         </item>
@@ -576,6 +773,14 @@ background-color: rgb(255, 58, 110);</string>
    </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QWidget</extends>
+   <header>PlotWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
